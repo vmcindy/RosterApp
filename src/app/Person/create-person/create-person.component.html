@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h4>Add Student or Staff Name</h4>
+        <div class="form-container">
+            <label for="fname">First Name</label>
+            <!-- <input type="text" id="fname" class="form-control" [(ngModel)]="newPersonFirstName"> -->
+            <input type="text" id="fname" class="form-control" #firstNameInput>
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" class="form-control" [(ngModel)]="newPersonLastName">
+            <label for="age">Age</label>
+            <input type="text" id="age" class="form-control" [(ngModel)]="newPersonAge">
+            <hr>
+            <button class="btn btn-primary" (click)="onAddStudent(firstNameInput)">Add Student</button>
+            <button class="btn btn-primary" (click)="onAddStaff(firstNameInput)">Add Staff</button>
+        </div>
+    </div>
+</div>
