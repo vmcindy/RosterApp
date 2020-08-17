@@ -1,15 +1,9 @@
 <div class="panel panel-default">
-    <div class="panel-heading">
-        {{person.firstName}} {{person.lastName}}
+    <div class="panel-heading" >
+        <span>{{person.firstName}}</span>
+        <span #lastName>{{person.lastName}}</span>
     </div>
     <div class="panel-body">
-        <div class="row">
-            <div class="col-sm-6">
-                Role: <span [ngClass]="{'staff': person.type === 'Staff', 'student': person.type === 'Student'}">{{person.type}}</span>
-            </div>
-            <div class="col-sm-6">
-                Age: <span>{{person.age}}</span>
-            </div>
-        </div>
+        <ng-content></ng-content>
     </div>
 </div>

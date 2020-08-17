@@ -27,4 +27,12 @@ export class AppComponent {
     });
   }
 
+  onChangeFirst() {
+    this.rosterList[0].type = "Prefect";
+  }
+
+  onDestroyFirst() {
+    this.rosterList.splice(0,1);
+  }
+
 }

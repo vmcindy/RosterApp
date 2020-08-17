@@ -10,7 +10,18 @@
     <hr>
     <div class="row">
         <div class="col-sm-12">
-            <app-person-info *ngFor="let listItem of rosterList" [prsn]="listItem"></app-person-info>
+            <button class="btn btn-primary" (click)="onChangeFirst()">Change Role on 1st Person</button>
+            <button class="btn btn-danger" (click)="onDestroyFirst()">Delete 1st Person</button>
+            <app-person-info *ngFor="let listItem of rosterList" [prsn]="listItem">
+                <div class="row" #bodyContent>
+                    <div class="col-sm-6">
+                        Role: <span [ngClass]="{'staff': listItem.type === 'Staff', 'student': listItem.type === 'Prefect'}">{{listItem.type}}</span>
+                    </div>
+                    <div class="col-sm-6">
+                        Age: <span>{{listItem.age}}</span>
+                    </div>
+                </div>
+            </app-person-info>
         </div>
     </div>
 </div>

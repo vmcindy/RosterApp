@@ -1,17 +1,20 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-create-person',
   templateUrl: './create-person.component.html',
   styleUrls: ['./create-person.component.css']
 })
-export class CreatePersonComponent implements OnInit {
+export class CreatePersonComponent implements OnInit{
 
   @Output('stdntCreated') studentCreated = new EventEmitter<{fname: string, lname: string, age: string }>();
   @Output('staffCreated') staffCreated = new EventEmitter<{fname: string, lname: string, age: string }>();
 
   // newPersonFirstName = '';
-  newPersonLastName = '';
+  // newPersonLastName = '';
+
+  @ViewChild('lastNameInput', {static:true}) lastNameInput: ElementRef;
+
   newPersonAge = '';
 
   constructor() { }
@@ -22,7 +25,7 @@ export class CreatePersonComponent implements OnInit {
   onAddStudent(firstNameInput: HTMLInputElement) {
     this.studentCreated.emit({
       fname: firstNameInput.value,
-      lname: this.newPersonLastName,
+      lname: this.lastNameInput.nativeElement.value,
       age: this.newPersonAge
     });
   }
@@ -30,7 +33,7 @@ export class CreatePersonComponent implements OnInit {
   onAddStaff(firstNameInput: HTMLInputElement) {
     this.staffCreated.emit({
       fname: firstNameInput.value,
-      lname: this.newPersonLastName,
+      lname: this.lastNameInput.nativeElement.value,
       age: this.newPersonAge
     });
   }
