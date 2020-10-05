@@ -4,7 +4,8 @@
         <div class="col-sm-12">
             <app-create-person 
                 (stdntCreated)="onStudentAdded($event)"
-                (staffCreated)="onStaffAdded($event)"></app-create-person>
+                (staffCreated)="onStaffAdded($event)">
+            </app-create-person>
         </div>
     </div>
     <hr>
@@ -14,10 +15,10 @@
             <button class="btn btn-danger" (click)="onDestroyFirst()">Delete 1st Person</button>
             <app-person-info *ngFor="let listItem of rosterList" [prsn]="listItem">
                 <div class="row" #bodyContent>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" appBasicDirective>
                         Role: <span [ngClass]="{'staff': listItem.type === 'Staff', 'student': listItem.type === 'Prefect'}">{{listItem.type}}</span>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" appBetterDirective [defaultColor]="'yellow'" [hoverColor]="'cyan'">
                         Age: <span>{{listItem.age}}</span>
                     </div>
                 </div>
