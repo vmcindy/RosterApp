@@ -13,16 +13,25 @@
         <div class="col-sm-12">
             <button class="btn btn-primary" (click)="onChangeFirst()">Change Role on 1st Person</button>
             <button class="btn btn-danger" (click)="onDestroyFirst()">Delete 1st Person</button>
-            <app-person-info *ngFor="let listItem of rosterList" [prsn]="listItem">
-                <div class="row" #bodyContent>
-                    <div class="col-sm-6" appBasicDirective>
-                        Role: <span [ngClass]="{'staff': listItem.type === 'Staff', 'student': listItem.type === 'Prefect'}">{{listItem.type}}</span>
+            <div *ngIf="rosterList.length > 0">
+                <h4>Roster Count: {{rosterList.length}}</h4>
+                <app-person-info *ngFor="let listItem of rosterList" [prsn]="listItem" >
+                    <div class="row" #bodyContent>
+                        <div class="col-sm-6" appBasicDirective>
+                            Role: 
+                            <span [ngClass]="{'staff': listItem.type === 'Staff', 'student': listItem.type === 'Prefect'}">{{listItem.type}}</span>
+                            <span [ngSwitch]="listItem.type">
+                                <span *ngSwitchCase="'Staff'"> (Adult)</span>
+                                <span *ngSwitchDefault> (Child)</span>
+                            </span>
+                        </div>
+                        <div class="col-sm-6" appBetterDirective="cyan" [defaultColor]="'aquamarine'">
+                            Age: <span>{{listItem.age}}</span>
+                        </div>
                     </div>
-                    <div class="col-sm-6" appBetterDirective [defaultColor]="'yellow'" [hoverColor]="'cyan'">
-                        Age: <span>{{listItem.age}}</span>
-                    </div>
-                </div>
-            </app-person-info>
+                </app-person-info>
+            </div>
+            <div class="well" *appUnless="rosterList.length > 0">No records found.</div>
         </div>
     </div>
 </div>

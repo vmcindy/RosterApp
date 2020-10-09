@@ -6,8 +6,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { CreatePersonComponent } from './Person/create-person/create-person.component';
 import { PersonInfoComponent } from './Person/person-info/person-info.component';
-import { BasicDirectiveDirective } from './basic-directive.directive';
-import { BetterDirectiveDirective } from './better-directive.directive';
+import { BasicDirective } from './basic-directive.directive';
+import { BetterDirective } from './better-directive.directive';
+import { UnlessDirective } from './unless-directive.directive';
 
 @NgModule({
   declarations: [
@@ -15,8 +16,9 @@ import { BetterDirectiveDirective } from './better-directive.directive';
     HeaderComponent,
     CreatePersonComponent,
     PersonInfoComponent,
-    BasicDirectiveDirective,
-    BetterDirectiveDirective
+    BasicDirective,
+    BetterDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,

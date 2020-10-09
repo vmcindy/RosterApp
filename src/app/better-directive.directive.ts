@@ -3,10 +3,10 @@ import { Directive, ElementRef, HostBinding, HostListener, Input, OnInit, Render
 @Directive({
   selector: '[appBetterDirective]'
 })
-export class BetterDirectiveDirective implements OnInit {
+export class BetterDirective implements OnInit {
 
   @Input() defaultColor: string = 'antiquewhite';
-  @Input() hoverColor: string = 'gainsboro';
+  @Input() appBetterDirective: string = 'gainsboro';
 
   @HostBinding('style.backgroundColor') backgroundColor: string;
 
@@ -19,7 +19,7 @@ export class BetterDirectiveDirective implements OnInit {
 
   @HostListener ('mouseenter') mouseover (eventData: Event) {
     // this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'gainsboro');
-    this.backgroundColor = this.hoverColor;
+    this.backgroundColor = this.appBetterDirective;
   }
 
   @HostListener ('mouseleave') mouseleave (eventData: Event) {
