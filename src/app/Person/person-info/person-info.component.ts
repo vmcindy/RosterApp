@@ -16,51 +16,51 @@ OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit
   constructor() { }
 
   ngOnChanges(){
-    console.log('OnChanges Called..!');
-    console.log('Last Name - ' + this.lastName.nativeElement.textContent);
-    console.log('Body Content -' + this.bodyContent.nativeElement.textContent);
+    // console.log('OnChanges Called..!');
+    // console.log('Last Name - ' + this.lastName.nativeElement.textContent);
+    // console.log('Body Content -' + this.bodyContent.nativeElement.textContent);
   }
 
   ngOnInit(): void {
-    console.log('OnInit Called..!')
-    console.log('Last Name - ' + this.lastName.nativeElement.textContent);
-    console.log('Body Content -' + this.bodyContent.nativeElement.textContent);
+    // console.log('OnInit Called..!')
+    // console.log('Last Name - ' + this.lastName.nativeElement.textContent);
+    // console.log('Body Content -' + this.bodyContent.nativeElement.textContent);pnh
   }
 
   ngDoCheck(){
-    console.log('DoCheck Called..!'); 
-    console.log('Last Name - ' + this.lastName.nativeElement.textContent);
-    console.log('Body Content -' + this.bodyContent.nativeElement.textContent);    
+    // console.log('DoCheck Called..!'); 
+    // console.log('Last Name - ' + this.lastName.nativeElement.textContent);
+    // console.log('Body Content -' + this.bodyContent.nativeElement.textContent);    
   }
 
   ngAfterContentInit(){
-    console.log('AfterContentInit Called..!'); 
-    console.log('Last Name - ' + this.lastName.nativeElement.textContent);
-    console.log('Body Content -' + this.bodyContent.nativeElement.textContent);
+    // console.log('AfterContentInit Called..!'); 
+    // console.log('Last Name - ' + this.lastName.nativeElement.textContent);
+    // console.log('Body Content -' + this.bodyContent.nativeElement.textContent);
   }
 
   ngAfterContentChecked(){
-    console.log('AfterContentChecked Called..!'); 
-    console.log('Last Name - ' + this.lastName.nativeElement.textContent);
-    console.log('Body Content -' + this.bodyContent.nativeElement.textContent);
+    // console.log('AfterContentChecked Called..!'); 
+    // console.log('Last Name - ' + this.lastName.nativeElement.textContent);
+    // console.log('Body Content -' + this.bodyContent.nativeElement.textContent);
   }
 
   ngAfterViewInit(){
-    console.log('AfterViewInit Called..!'); 
-    console.log('Last Name - ' + this.lastName.nativeElement.textContent);
-    console.log('Body Content -' + this.bodyContent.nativeElement.textContent);
+    // console.log('AfterViewInit Called..!'); 
+    // console.log('Last Name - ' + this.lastName.nativeElement.textContent);
+    // console.log('Body Content -' + this.bodyContent.nativeElement.textContent);
   }
 
   ngAfterViewChecked(){
-    console.log('AfterViewChecked Called..!'); 
-    console.log('Last Name - ' + this.lastName.nativeElement.textContent);
-    console.log('Body Content -' + this.bodyContent.nativeElement.textContent);
+    // console.log('AfterViewChecked Called..!'); 
+    // console.log('Last Name - ' + this.lastName.nativeElement.textContent);
+    // console.log('Body Content -' + this.bodyContent.nativeElement.textContent);
   }
 
   ngOnDestroy(){
-    console.log('OnDestroy Called..!'); 
-    console.log('Last Name - ' + this.lastName.nativeElement.textContent);
-    console.log('Body Content -' + this.bodyContent.nativeElement.textContent);
+    // console.log('OnDestroy Called..!'); 
+    // console.log('Last Name - ' + this.lastName.nativeElement.textContent);
+    // console.log('Body Content -' + this.bodyContent.nativeElement.textContent);
   }
   
 }

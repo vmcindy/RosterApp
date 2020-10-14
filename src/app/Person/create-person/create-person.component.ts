@@ -1,9 +1,11 @@
 import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { LoggingService } from 'src/app/logging.service';
 
 @Component({
   selector: 'app-create-person',
   templateUrl: './create-person.component.html',
-  styleUrls: ['./create-person.component.css']
+  styleUrls: ['./create-person.component.css'],
+  providers: [LoggingService]
 })
 export class CreatePersonComponent implements OnInit{
 
@@ -17,12 +19,13 @@ export class CreatePersonComponent implements OnInit{
 
   newPersonAge = '';
 
-  constructor() { }
+  constructor(private logService: LoggingService) { }
 
   ngOnInit(): void {
   }
 
   onAddStudent(firstNameInput: HTMLInputElement) {
+    this.logService.logToConsole('onAddStudent method called');
     this.studentCreated.emit({
       fname: firstNameInput.value,
       lname: this.lastNameInput.nativeElement.value,
@@ -31,6 +34,7 @@ export class CreatePersonComponent implements OnInit{
   }
 
   onAddStaff(firstNameInput: HTMLInputElement) {
+    this.logService.logToConsole('onAddStaff method called');
     this.staffCreated.emit({
       fname: firstNameInput.value,
       lname: this.lastNameInput.nativeElement.value,
