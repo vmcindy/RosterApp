@@ -17,16 +17,6 @@ export class AppComponent {
     this.rosterList = this.rosterListService.getList();
   }
 
-  onStudentAdded(personData : {fname: string, lname: string, age: string}) {
-    this.logService.logToConsole('onStudentAdded method called..!');
-    this.rosterListService.addPerson('Student', personData.fname, personData.lname, personData.age);
-  }
-
-  onStaffAdded(personData : {fname: string, lname: string, age: string}) {
-    this.logService.logToConsole('onStaffAdded method called..!');
-    this.rosterListService.addPerson('Staff', personData.fname, personData.lname, personData.age);
-  }
-
   onChangeFirst() {
     let person = this.rosterList[0];
     person.type = "Prefect";
