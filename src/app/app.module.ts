@@ -10,6 +10,8 @@ import { BasicDirective } from './basic-directive.directive';
 import { BetterDirective } from './better-directive.directive';
 import { UnlessDirective } from './unless-directive.directive';
 
+import { LoggingService } from './logging.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,7 @@ import { UnlessDirective } from './unless-directive.directive';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [LoggingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
